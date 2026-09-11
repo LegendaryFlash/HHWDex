@@ -14,7 +14,7 @@ x-common-env-vars:
 
 services:
   bot:
-    restart: "no"
+    restart: unless-stopped
     image: ballsdex
     build: .
     environment:
@@ -35,7 +35,7 @@ services:
       - "./extra:/code/extra:ro"
       - "./admin_panel/media:/code/admin_panel/media:rw"
     tty: true
-    command: python3 -m ballsdex --dev
+    command: python3 -m ballsdex --dev --disable-time-check
 
     develop:
       watch:
@@ -199,3 +199,4 @@ volumes:
 networks:
   internal:
   nginx:
+

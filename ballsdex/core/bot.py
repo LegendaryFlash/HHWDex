@@ -146,6 +146,7 @@ class CommandTree[Bot: BallsDexBot](app_commands.CommandTree[Bot]):
                     span.set_attribute("discord.command.name", name)
 
     async def interaction_check(self, interaction: discord.Interaction[Bot], /) -> bool:
+        log.warning(f"INTERACTION RECEIVED: {interaction.id}")
         # checking if the moment we receive this interaction isn't too late already
         # there is a 3 seconds limit for initial response, taking a little margin into account
         # https://discord.com/developers/docs/interactions/receiving-and-responding#responding-to-an-interaction
