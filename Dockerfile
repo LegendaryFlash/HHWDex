@@ -60,7 +60,7 @@ COPY --from=builder-base /var/www/ballsdex/static /var/www/ballsdex/static
 
 FROM base AS production
 COPY --from=builder-base /opt/venv /opt/venv
-COPY --from=builder-base /code/admin_panel/admin_panel/settings/production.py /code/admin_panel/admin_panel/settings/production.py
+COPY --from=builder-base /code/admin_panel/admin_panel/settings/production.py /opt/venv/lib/python3.14/site-packages/admin_panel/settings/production.py
 WORKDIR /code/admin_panel
 USER ballsdex
 CMD ["python3", "-m", "ballsdex", "--dev", "--disable-time-check"]
