@@ -4,5 +4,6 @@ SECRET_KEY = "4ZQ3tllSpe-ghnV9DrLRDxtrSL1tn9IN_fCmk8JogyMLvQTDCSWvwwQvnj4EGxodwf
 
 ALLOWED_HOSTS = [
     "localhost",
-    "hhwdex.legendaryflash.blitz.cloud",
+    "hhwdex.legendaryflash8.blitz.cloud",
 ]
+
