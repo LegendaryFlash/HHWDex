@@ -40,7 +40,7 @@ RUN apk add --no-cache gcc libc-dev git
 # django-debug-toolbar, pyinstrument, ...) into the image. Used for local Docker development.
 ARG INSTALL_DEV_DEPS=
 
-COPY --from=ghcr.io/astral-sh/uv:0.7.3 /uv /uvx /bin/
+COPY --from=astral/uv:latest /uv /uvx /bin/
 COPY uv.lock pyproject.toml /code/
 RUN --mount=type=cache,target=/root/.cache/ \
     uv venv $VIRTUAL_ENV && \
