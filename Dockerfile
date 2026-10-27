@@ -1,4 +1,4 @@
-# syntax=docker/dockerfile:1.7.1-labs
+# syntax=docker/dockerfile:1.7-labs
 
 FROM python:3.14.0-alpine3.22 AS base
 
