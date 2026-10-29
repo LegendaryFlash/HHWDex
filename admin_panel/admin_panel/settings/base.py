@@ -104,8 +104,9 @@ if env_log_dir := os.environ.get("BALLSDEX_LOG_DIR"):
 else:
     log_dir = pathlib.Path("./logs")
     if pathlib.Path("./manage.py").exists():
-        log_dir = ".." / log_dir
-    log_dir.mkdir(exist_ok=True)
+        log_dir = pathlib.Path("..") / log_dir
+
+log_dir.mkdir(parents=True, exist_ok=True)
 
 LOGGING = {
     "version": 1,
